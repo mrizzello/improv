@@ -1,38 +1,32 @@
-name: Deploy to GitHub Pages
+name: GitHub Pages
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: '18.x'
-
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
+          ruby-version: 2.7
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          gem install jekyll bundler
+          bundle install
 
-      - name: Build
-        run: ng build --output-path docs --base-href /improv/
+      - name: Build site
+        run: bundle exec jekyll build --destination ./docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-          publish_branch: gh-pages
