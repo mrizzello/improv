@@ -15,6 +15,8 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
@@ -23,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: ng build --output-path docs --base-href=/improv/
+        run: ng build --output-path docs --base-href /improv/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
