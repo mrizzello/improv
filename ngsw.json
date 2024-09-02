@@ -1,0 +1,89 @@
+{
+  "configVersion": 1,
+  "timestamp": 1725316508344,
+  "index": "/improv/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/improv/favicon.ico",
+        "/improv/index.html",
+        "/improv/main.8b2bee874a77fb17.js",
+        "/improv/manifest.webmanifest",
+        "/improv/polyfills.66601ff98b395151.js",
+        "/improv/runtime.2a7f65862560c481.js",
+        "/improv/styles.ea21c62b82b48b8f.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/improv/assets/actions.txt",
+        "/improv/assets/caracteres.txt",
+        "/improv/assets/icons/icon-128x128.png",
+        "/improv/assets/icons/icon-144x144.png",
+        "/improv/assets/icons/icon-152x152.png",
+        "/improv/assets/icons/icon-192x192.png",
+        "/improv/assets/icons/icon-384x384.png",
+        "/improv/assets/icons/icon-512x512.png",
+        "/improv/assets/icons/icon-72x72.png",
+        "/improv/assets/icons/icon-96x96.png",
+        "/improv/assets/lieux.txt",
+        "/improv/assets/professions.txt"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/improv/assets/actions.txt": "f90c0d0368b63b7e028118b4edb09024645a45ee",
+    "/improv/assets/caracteres.txt": "b70e021345765c7d8a2567e0659ca6f37aa8809c",
+    "/improv/assets/icons/icon-128x128.png": "314750717152ba1271e17a2723236a87aed64a8f",
+    "/improv/assets/icons/icon-144x144.png": "25a9f3b2ab2ed60c46a451f180bb468bb9619438",
+    "/improv/assets/icons/icon-152x152.png": "a94324293f306206fa0c0b880aab1149dbf7304d",
+    "/improv/assets/icons/icon-192x192.png": "ae35902081216a3975c83f203826e8b94185df24",
+    "/improv/assets/icons/icon-384x384.png": "5ea56de4d183aa1ca4d2bd4a7d1ff31767a52837",
+    "/improv/assets/icons/icon-512x512.png": "94af9eb20f10e044637bf231f74d3dd11ef5077b",
+    "/improv/assets/icons/icon-72x72.png": "8a2ba4296d2e5938ebda9d377b97e6e7e67e38f3",
+    "/improv/assets/icons/icon-96x96.png": "6aa450fb681813c3e842182a797170922e22fd9b",
+    "/improv/assets/lieux.txt": "77dbac4aaeb95dc24090129abe1b47fade47221d",
+    "/improv/assets/professions.txt": "164848dff49a2ec51389d2a52b214c10436130f8",
+    "/improv/favicon.ico": "dba402391e0ca55960d0eb57e6462d1239c592a2",
+    "/improv/index.html": "6cd3473e7620bdefb7b1f97b9e2bc7ffc7a89b22",
+    "/improv/main.8b2bee874a77fb17.js": "021ded7a0517ad4251bd1533409479f30e87813d",
+    "/improv/manifest.webmanifest": "cc686ec791f7d0ff7b0ffbdc2c82b2d47d4fdd4c",
+    "/improv/polyfills.66601ff98b395151.js": "2b25d96d9e91f5c8019460dd85366c956b2ea741",
+    "/improv/runtime.2a7f65862560c481.js": "3f0cc819aa9bd088a33a3e620a4399d73dd32bc9",
+    "/improv/styles.ea21c62b82b48b8f.css": "35a7ab04673e27d70810d04d472f1164f285ef3a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
