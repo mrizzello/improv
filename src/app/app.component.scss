@@ -1,0 +1,125 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .categorie {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 50%;
+        height: 67px;
+        font-weight: bold;
+
+        &.selected {
+            button {
+                color: white;
+                background-color: rgb(48, 63, 159);
+            }
+        }
+    }
+}
+
+.draw {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+
+    .reset-button{
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%); 
+        color: grey;
+    }
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+
+    .empty {
+        text-align: center;
+    }
+}
+
+.selection {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    .category {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+
+        .item{
+            font-size: 200%;
+            font-weight: bold;
+            margin-bottom: 0.67rem;
+            text-align: center;
+            line-height: 120%;
+            padding: 0 1.5rem;
+        }
+
+        .label{
+            font-style: italic;
+        }
+
+        &.actions{
+            background-color: #024873;
+        }
+
+        &.caracteres{
+            background-color: #012840;
+        }
+
+        &.lieux{
+            background-color: #0A6AA6;
+        }
+
+        &.professions{
+            background-color: #368ABF;
+        }
+    }
+}
+
+@keyframes shake {
+    0% {margin-left: 0rem;}
+    20% {margin-left: 1rem;}
+    40% {margin-left: -1rem;}
+    60% {margin-left: 1.2rem;}
+    80% {margin-left: -1.2rem;}
+    100% {margin-left: 0rem;}
+}
+
+.shake {
+    display: inline-block;
+    animation: shake 0.4s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}

@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<h1 class="title">CATÉGORIES</h1>
+<div class="categories">
+    <div class="categorie actions" (click)="selectCategory('actions')" [ngClass]="isCategorySelected('actions')">
+        <button mat-raised-button>ACTIONS</button>
+    </div>
+    <div class="categorie caracteres" (click)="selectCategory('caracteres')"
+        [ngClass]="isCategorySelected('caracteres')">
+        <button mat-raised-button>CARACTÈRES</button>
+    </div>
+    <div class="categorie lieux" (click)="selectCategory('lieux')" [ngClass]="isCategorySelected('lieux')">
+        <button mat-raised-button>LIEUX</button>
+    </div>
+    <div class="categorie professions" (click)="selectCategory('professions')"
+        [ngClass]="isCategorySelected('professions')">
+        <button mat-raised-button>PROFESSIONS</button>
+    </div>
+</div>
+<div class="draw">
+    <button mat-fab (click)="draw()">
+        <mat-icon>smart_toy</mat-icon>
+    </button>
+    <div class="reset-button">
+        <button mat-icon-button  (click)="reset()">
+            <mat-icon>cancel</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="content">
+    <div class="empty {{cssShake}}" *ngIf="isEmpty">
+        Sélectionnez au moins<br />une catégorie&nbsp;...
+    </div>
+    <div class="selection" *ngIf="!isEmpty">
+        <ng-container *ngFor="let category of categories">
+            <div *ngIf="selection[category]!==''" class="category {{category}}">
+                <span class="item">{{selection[category]}}</span>
+                <span class="label">{{getCategoryLabel(category)}}</span>
+            </div>
+        </ng-container>
+    </div>
+</div>
