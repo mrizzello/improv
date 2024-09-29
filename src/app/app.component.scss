@@ -32,6 +32,9 @@
                 background-color: rgb(48, 63, 159);
             }
         }
+        &.repliques {
+            flex-grow: 1;
+        }
     }
 }
 
@@ -103,6 +106,10 @@
 
         &.professions{
             background-color: #368ABF;
+        }
+
+        &.repliques{
+            background-color: #4A6BA4;
         }
     }
 }

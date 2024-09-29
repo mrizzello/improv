@@ -14,6 +14,10 @@
         [ngClass]="isCategorySelected('professions')">
         <button mat-raised-button>PROFESSIONS</button>
     </div>
+    <div class="categorie repliques" (click)="selectCategory('repliques')"
+        [ngClass]="isCategorySelected('repliques')">
+        <button mat-raised-button>RÉPLIQUES</button>
+    </div>
 </div>
 <div class="draw">
     <button mat-fab (click)="draw()">

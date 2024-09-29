@@ -3,14 +3,15 @@ import { FileLoaderService } from './services/file-loader.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-type Category = 'actions' | 'caracteres' | 'lieux' | 'professions';
-const allCategories: Category[] = ['actions', 'caracteres', 'lieux', 'professions'];
+type Category = 'actions' | 'caracteres' | 'lieux' | 'professions' | 'repliques';
+const allCategories: Category[] = ['actions', 'caracteres', 'lieux', 'professions', 'repliques'];
 
 const labels: { [key in Category]: string } = {
   actions: 'ACTION',
   caracteres: 'CARACTÈRE',
   lieux: 'LIEU',
-  professions: 'PROFESSION'
+  professions: 'PROFESSION',
+  repliques: 'RÉPLIQUE'
 };
 
 @Component({
@@ -19,17 +20,31 @@ const labels: { [key in Category]: string } = {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  data: { actions: string[], caracteres: string[], lieux: string[], professions: string[] } = {
+  data: {
+    actions: string[],
+    caracteres: string[],
+    lieux: string[],
+    professions: string[],
+    repliques: string[]
+  } = {
     actions: [],
     caracteres: [],
     lieux: [],
-    professions: []
+    professions: [],
+    repliques: []
   };
-  selection: { actions: string, caracteres: string, lieux: string, professions: string } = {
+  selection: {
+    actions: string,
+    caracteres: string,
+    lieux: string,
+    professions: string,
+    repliques: string
+  } = {
     actions: '',
     caracteres: '',
     lieux: '',
-    professions: ''
+    professions: '',
+    repliques: ''
   };
   categories = allCategories;
   private destroy$ = new Subject<void>();
@@ -45,14 +60,16 @@ export class AppComponent implements OnInit, OnDestroy {
     this.fileLoaderService.loadFiles().pipe(
       takeUntil(this.destroy$)
     ).subscribe({
-      next: ([actionsArray, caracteresArray, lieuxArray, professionsArray]) => {
+      next: ([actionsArray, caracteresArray, lieuxArray, professionsArray, repliquesArray]) => {
         this.data = {
           actions: actionsArray,
           caracteres: caracteresArray,
           lieux: lieuxArray,
-          professions: professionsArray
+          professions: professionsArray,
+          repliques: repliquesArray
         };
         this.isLoading = false;
+        
       },
       error: (err) => {
         this.error = 'Error loading files. Please try again later.';
@@ -109,9 +126,10 @@ export class AppComponent implements OnInit, OnDestroy {
       return;
     }
     this.isEmpty = false;
-    this.clearCategories();
+    this.clearCategories();    
+    
     this.selectedCategories.forEach((category) => {
-      let items = [...this.data[category]];
+      let items = [...this.data[category]];      
       items = this.shuffleArray(items);
       this.selection[category] = items[0];
     });
